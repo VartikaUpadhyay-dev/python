@@ -263,24 +263,5 @@
 
 #Ques 20
 
-start = int(input("Enter starting number: "))
-end = int(input("Enter ending number: "))
-
-count = 0
-
-for num in range(start, end + 1):
-
-    if num > 1:
-        is_prime = True
-
-        for i in range(2, num):
-
-            if num % i == 0:
-                is_prime = False
-                break
-
-        if is_prime:
-            print(num, end=" ")
-            count += 1
-
-print("\nTotal Prime Numbers =", count)
+fruits = ["apple", "banana", "apple", "cherry"]
+print(fruits.count("apple"), fruits.index("cherry"))
