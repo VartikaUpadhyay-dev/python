@@ -66,24 +66,39 @@
         
 
 
-random_string = "My name is akshat"
+#random_string = "My name is akshat"
 
-count_variable = []
-count_number = []
+#count_variable = []
+#count_number = []
 
-for ch in random_string:
-    if ch not in count_variable:
-        count = 0
+#for ch in random_string:
+ #   if ch not in count_variable:
+  #      count = 0
 
-        for x in random_string:
-            if ch == x:
-                count += 1
+   #     for x in random_string:
+    #        if ch == x:
+     #           count += 1
 
-        count_variable.append(ch)
-        count_number.append(count)
+      #  count_variable.append(ch)
+      #  count_number.append(count)
 
-print(count_variable)
-print(count_number)
+#print(count_variable)
+#print(count_number)
+
+text = "programming"
+
+unique = []
+
+for ch in text:
+    if ch not in unique:
+        unique.append(ch)
+
+result = ""
+
+for ch in unique:
+    result += ch
+
+print(result)
         
     
 
