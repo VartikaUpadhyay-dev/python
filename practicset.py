@@ -65,31 +65,31 @@
 #Input : [1, 1, 1, 1]
 #Output: 1 (duplicates don't extend sequence)
 
-#numbers = [100, 4, 200, 1, 3, 2]
+numbers = [100, 4, 200, 1, 3, 2]
 
-#unique_numbers = []
+unique_numbers = []
 
-#for num in numbers:
- #   if num not in unique_numbers:
-  #      unique_numbers.append(num)
+for num in numbers:
+   if num not in unique_numbers:
+       unique_numbers.append(num)
 
-#unique_numbers.sort()
+unique_numbers.sort()
 
-#longest = 1
-#current = 1
+longest = 1
+current = 1
 
-#for i in range(1, len(unique_numbers)):
- #   if unique_numbers[i] == unique_numbers[i - 1] + 1:
-  #      current += 1
-   # else:
-    #    if current > longest:
-     #       longest = current
-      #  current = 1
+for i in range(1, len(unique_numbers)):
+   if unique_numbers[i] == unique_numbers[i - 1] + 1:
+      current += 1
+   else:
+      if current > longest:
+            longest = current
+      current = 1
 
-#if current > longest:
- #   longest = current
+if current > longest:
+   longest = current
 
-#print(longest)
+print(longest)
 
 #Q14. You are given a paragraph. Find the longest palindromic substring in it (ignore spaces and punctuation).
 #Input : "never odd or even"
@@ -100,7 +100,23 @@
 #Output: any single character (no palindrome longer than 1)
 #Input : "a"
 #Output: "a"
- 
+#def longest_unique(s):
+#   longest = ""
+#   for i in range(len(s)):
+# temp = ""
+
+#        for j in range(i, len(s)):
+#            if s[j] in temp:
+#                break
+
+#            temp += s[j]
+
+#        if len(temp) > len(longest):
+#           longest = temp
+# return longest
+
+# print(longest_unique("racecar"))
+
  
 # Q15. You are given two arrays. Without using any built-in set functions, find their intersection — elements that appear in both, without duplicates.
 #Input : [1, 3, 5, 7, 3, 9] and [3, 5, 5, 8, 9]
