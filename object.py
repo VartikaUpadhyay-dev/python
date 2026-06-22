@@ -47,114 +47,106 @@
 
 #print("Highest Average Student =", best_student["name"])
 
-#company = {
-#    "name": "CEO",
-#    "reports": [
-#        {
-#            "name": "Manager1",
-#            "reports": [
-#                {"name": "Emp1"},
-#                {"name": "Emp2"}
-#            ]
-#        },
-#        {
-#            "name": "Manager2",
-#            "reports": [
-#            ]
-#        }
-#    ]
-#}       
+company = {
+    "name": "CEO",
+   "reports": [
+        {            "name": "Manager1",
+            "reports": [
+                {"name": "Emp1"},
+                {"name": "Emp2"}           ]
+        },
+        {
+    "name": "Manager2",
+            "reports": [
+            ]
+        }
+    ]
+}       
 
-#count = 0
+count = 0
+def companyList(company):
+    global count
+    print(company["name"])
 
-#print(company["name"])
+    for manager in company["reports"]:
+        print(manager["name"])
+        count += 1
 
-#for manager in company["reports"]:
-#    print(manager["name"])
-#   count += 1
+    for employee in manager["reports"]:
+        print(employee["name"])
+        count += 1
 
-#    for employee in manager["reports"]:
-#        print(employee["name"])
-#        count += 1
+companyList(company)
 
-#print("Total Employees =", count)
+print("Total Employees =", count)
+
+
 
 #employees = {
-#    1:{"name":"Alice","department":"IT","salary":50000},
-#    2:{"name": "bob","department":"Bank","salary":20000},
-#   3:{"name":"David","department":"IT","salary":40000}
+ #   1:{"name":"Alice","department":"IT","salary":50000},
+  #  2:{"name": "bob","department":"Bank","salary":20000},
+   #3:{"name":"David","department":"IT","salary":40000}
 #}
 #department = {}
 #for emp_id,details in employees.items():
-#    dept = details["department"]
+ #   dept = details["department"]
     
-#    if dept not in department:
-#         department[dept] = []
+  #  if dept not in department:
+   #      department[dept] = []
 
 #department[dept].append(details)
 
 #highest_paid = {}
 
 #for dept, emp_list in department.items():
-#    highest = emp_list[0]
+  #  highest = emp_list[0]
 
-#    for emp in emp_list:
-#        if emp["salary"] > highest["salary"]:
-#            highest = emp
+   # for emp in emp_list:
+        
 
-#    highest_paid[dept] = highest
+# orders = [
+#     {
+#         "order_id": 1,
+#         "customer": "Aman",
+#         "items": [("Laptop", 1, 50000), ("Mouse", 2, 500)],
+#         "status": "delivered"
+#     },
+#     {
+#         "order_id": 2,
+#         "customer": "Riya",
+#         "items": [("Phone", 1, 30000)],
+#         "status": "pending"
+#     },
+#     {
+#         "order_id": 3,
+#         "customer": "Aman",
+#         "items": [("Keyboard", 1, 2000)],
+#         "status": "delivered"
+#     },
+#     {
+#         "order_id": 4,
+#         "customer": "Rahul",
+#         "items": [("Monitor", 2, 10000)],
+#         "status": "delivered"
+#     }
+# ]
 
-#print("Employees Grouped By Department:")
-#for dept, emp_list in dept.items():
-#    print(dept, ":", emp_list)
+# revenue = 0
+# spent = {}
 
-#print("\nHighest Paid Employee In Each Department:")
-#for dept, emp in highest_paid.items():
-#    print(dept, "->", emp["name"], "-", emp["salary"])
+# for order in orders:
+#     if order["status"] == "delivered":
 
-orders = [
-    {
-        "order_id": 1,
-        "customer": "Aman",
-        "items": [("Laptop", 1, 50000), ("Mouse", 2, 500)],
-        "status": "delivered"
-    },
-    {
-        "order_id": 2,
-        "customer": "Riya",
-        "items": [("Phone", 1, 30000)],
-        "status": "pending"
-    },
-    {
-        "order_id": 3,
-        "customer": "Aman",
-        "items": [("Keyboard", 1, 2000)],
-        "status": "delivered"
-    },
-    {
-        "order_id": 4,
-        "customer": "Rahul",
-        "items": [("Monitor", 2, 10000)],
-        "status": "delivered"
-    }
-]
+#         total = sum(qty * price for product, qty, price in order["items"])
 
-revenue = 0
-spent = {}
+#         revenue += total
 
-for order in orders:
-    if order["status"] == "delivered":
+#         customer = order["customer"]
 
-        total = sum(qty * price for product, qty, price in order["items"])
+#         spent[customer] = spent.get(customer, 0) + total
 
-        revenue += total
+# top_customer = max(spent, key=spent.get)
 
-        customer = order["customer"]
-
-        spent[customer] = spent.get(customer, 0) + total
-
-top_customer = max(spent, key=spent.get)
-
-print("Revenue =", revenue)
-print("Top Customer =", top_customer)
-print("Spent =", spent[top_customer])
+# print("Revenue =", revenue)
+# print("Top Customer =", top_customer)
+# print("Spent =", spent[top_customer])
